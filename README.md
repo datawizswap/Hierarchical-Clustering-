@@ -1,6 +1,6 @@
-Hierarchial-Clustering
+# Hierarchial-Clustering
 
-1. Data Preparation:
+### 1. Data Preparation:
 Begin with a dataset containing your observations (data points) and the features (variables) that describe those observations. Ensure that your data is in a suitable format for clustering, with numeric values or variables that can be converted to numeric.
 
 2. Distance Metric:
