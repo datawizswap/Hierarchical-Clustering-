@@ -1,121 +1,78 @@
-# University Clustering Project
+# University Clustering
+#### Overview
+This project performs Hierarchical Clustering on a university dataset to group universities based on various features like SAT scores, acceptance rates, and student-faculty ratios. It includes data preprocessing, handling missing values, detecting and treating outliers, and applying clustering techniques to discover patterns in the data.
 
-#### 1. Introduction
-This project demonstrates how to perform hierarchical clustering on a university dataset. The dataset contains various attributes of universities, and we aim to apply data preprocessing, imputation techniques, outlier treatment, and clustering to extract meaningful insights.
+The clustering process helps in identifying university groups that share similar characteristics, which can be useful for various educational analyses.
 
-#### 2. Dataset
-The dataset used for this project is named University_Clustering.xlsx, and it contains information about several universities such as:
-
-SAT Scores
-Top 10% of High School Students Admitted
-Acceptance Rate
-Student-Faculty Ratio
-Graduation Rate
-#### Loading the Data
-python
+#### Features
+Data Preprocessing: Handling missing values using mean, median, and random imputers.
+Outlier Detection: Using Winsorization to treat outliers in key variables such as SAT scores and acceptance rates.
+Hierarchical Clustering: Building dendrograms and using Ward's method for clustering.
+Correlation Analysis: Visualizing relationships between variables through correlation matrices.
+Silhouette Score: Evaluating the quality of the clusters using silhouette scores.
+Visualization: Using Seaborn and Matplotlib for data visualization (box plots, histograms, dendrograms).
+Technologies Used
+Python: Core language for data manipulation and analysis.
+Pandas: Used for data preprocessing, cleaning, and manipulation.
+NumPy: Supports numerical computations.
+Seaborn & Matplotlib: For creating insightful visualizations of the data.
+SciPy: Used for hierarchical clustering and linkage methods.
+Scikit-learn: Machine learning library for clustering, imputation, and evaluation metrics.
+D-Tale: Interactive data exploration tool for analyzing the dataset.
+Feature Engine: Outlier handling using Winsorization.
+Project Structure
+plaintext
 Copy code
-import pandas as pd
-
-#### Load the dataset
-df = pd.read_excel(r'C:\Users\Swapnil Mishra\Desktop\DS\Hierarchical Clustering\University_Clustering\University_Clustering.xlsx')
-#### 3. Data Exploration
-To get an understanding of the data, we explore key statistical properties like the mean, median, mode, variance, and standard deviation.
-
-python
+University_Clustering_Project/
+├── data/
+│   └── University_Clustering.xlsx    # Dataset used for clustering
+├── notebooks/
+│   └── university_clustering.ipynb   # Jupyter Notebook for exploratory analysis and clustering
+├── src/
+│   └── preprocessing.py              # Python scripts for data preprocessing
+│   └── clustering.py                 # Clustering logic and silhouette score evaluation
+├── static/
+│   └── plots/                        # Folder containing generated plots (box plots, heatmaps)
+├── README.md                         # Project overview
+└── requirements.txt                  # Python dependencies
+Key Steps
+1. Data Preprocessing
+Handling Missing Values: Using SimpleImputer and RandomSampleImputer to fill missing values in columns like SAT and graduation rates.
+Data Normalization: Normalizing the numerical features before clustering to standardize the range of variables.
+One-Hot Encoding: Encoding categorical variables such as university state to prepare the data for analysis.
+2. Outlier Detection and Treatment
+Winsorization is applied to key variables (SAT, Top10, Accept, SFRatio) to cap outliers and ensure data consistency.
+3. Clustering
+Dendrogram Plot: Hierarchical clustering is visualized using dendrograms, allowing us to determine the optimal number of clusters.
+Agglomerative Clustering: The dataset is clustered into 3 groups based on the dendrogram results.
+4. Cluster Evaluation
+Silhouette Score: A silhouette score is calculated to evaluate the performance and separation of the clusters.
+Installation & Usage
+Requirements
+Python 3.x
+Install the required dependencies using the following command:
+bash
 Copy code
-### Numerical statistics
-print(df.select_dtypes(include=[np.number]).mean())
-print(df.select_dtypes(include=[np.number]).median())
-print(df.select_dtypes(include=[np.number]).mode())
-#### 4. Data Preprocessing
-4.1 Data Cleaning
-We remove unnecessary columns and handle duplicates.
-
-python
+pip install -r requirements.txt
+Running the Project
+Clone the repository:
+bash
 Copy code
-### Drop the UnivID column
-df.drop(['UnivID'], axis=1, inplace=True)
-
-### Remove duplicate rows
-df = df.drop_duplicates()
-4.2 Missing Value Imputation
-Different imputation techniques are applied for handling missing data:
-
-Mean Imputation for SAT scores
-Median Imputation for Student-Faculty Ratio
-Random Imputation for Graduation Rate
-python
+git clone https://github.com/yourusername/university_clustering.git
+Navigate to the project folder:
+bash
 Copy code
-from sklearn.impute import SimpleImputer
-mean_imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
-df['SAT'] = pd.DataFrame(mean_imputer.fit_transform(df[['SAT']]))
-#### 5. Outlier Detection and Treatment
-Winsorization is applied to cap outliers using the Interquartile Range (IQR) method.
-
-python
+cd University_Clustering_Project
+Run the Jupyter notebook for data exploration and clustering:
+bash
 Copy code
-from feature_engine.outliers import Winsorizer
-
-### Apply Winsorization
-winsor = Winsorizer(capping_method='iqr', tail='both', fold=1.5, variables=['SAT', 'Top10', 'Accept', 'SFRatio'])
-df[['SAT', 'Top10', 'Accept', 'SFRatio']] = winsor.fit_transform(df[['SAT', 'Top10', 'Accept', 'SFRatio']])
-#### 6. Exploratory Data Analysis (EDA)
-Boxplots to visualize the distribution of numeric features.
-Histograms and Quantile-Quantile (Q-Q) Plots to check for normality.
-Correlation Matrix with a heatmap to understand relationships between variables.
-python
-Copy code
-### Boxplot for numeric features
-df_num.plot(kind='box', subplots=True, sharey=False, figsize=(10,6))
-#### 7. Clustering
-7.1 Data Normalization
-Data normalization is done to scale the variables before applying clustering.
-
-python
-Copy code
-def norm_func(i):
-    return (i - i.min()) / (i.max() - i.min())
-
-df_norm = norm_func(df.iloc[:, 1:])
-7.2 Hierarchical Clustering
-Using Ward's method, we plot a dendrogram and apply agglomerative clustering.
-
-python
-Copy code
-from scipy.cluster.hierarchy import dendrogram, linkage
-
-### Dendrogram
-tree_plot = dendrogram(linkage(df_norm, method='ward'))
-7.3 Cluster Assignment and Evaluation
-Clusters are formed and silhouette scores are used to evaluate the quality of clustering.
-
-python
-Copy code
-from sklearn.cluster import AgglomerativeClustering
-
-### Apply Agglomerative Clustering
-hc = AgglomerativeClustering(n_clusters=3, metric='euclidean', linkage='ward')
-cluster_labels = hc.fit_predict(df_norm)
-#### 8. Results and Visualization
-Dendrogram for visualizing the hierarchical clustering process.
-Boxplots for each cluster to analyze feature distributions.
-Silhouette Score to measure clustering performance.
-python
-Copy code
-import seaborn as sns
-
-### Correlation heatmap
-corrmatrix = df.corr()
-sns.heatmap(corrmatrix, cmap='coolwarm', annot=True)
-plt.show()
-#### 9. Conclusion
-This project demonstrated the application of hierarchical clustering on a university dataset. Through data preprocessing, outlier treatment, and visualization techniques, we successfully identified clusters of universities based on their attributes.
-
-#### 10. Libraries Used
-##### Pandas: Data manipulation and analysis
-##### Numpy: Numerical computations
-##### Seaborn/Matplotlib: Data visualization
-##### Scikit-learn: Machine learning algorithms for imputation and clustering
-##### Feature Engine: Outlier detection and Winsorization
-##### SciPy: Hierarchical clustering methods
-##### D-Tale: Interactive data exploration
+jupyter notebook notebooks/university_clustering.ipynb
+Visualizing Results
+Dendrogram and box plots are generated for analyzing the clusters.
+Correlation heatmaps provide insights into relationships between features.
+Results
+After clustering, each university is assigned to one of three clusters.
+The clusters are analyzed based on key features, and their means and variances are compared.
+Visualizations such as dendrograms, box plots, and heatmaps help interpret the clustering results.
+Conclusion
+This project successfully demonstrates how to cluster universities using hierarchical clustering techniques. The results provide insights into how universities can be grouped based on similarities in their characteristics.
