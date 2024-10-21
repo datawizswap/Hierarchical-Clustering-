@@ -4,13 +4,13 @@ This project performs Hierarchical Clustering on a university dataset to group u
 
 The clustering process helps in identifying university groups that share similar characteristics, which can be useful for various educational analyses.
 
-#### Features
-Data Preprocessing: Handling missing values using mean, median, and random imputers.
-Outlier Detection: Using Winsorization to treat outliers in key variables such as SAT scores and acceptance rates.
-Hierarchical Clustering: Building dendrograms and using Ward's method for clustering.
-Correlation Analysis: Visualizing relationships between variables through correlation matrices.
-Silhouette Score: Evaluating the quality of the clusters using silhouette scores.
-Visualization: Using Seaborn and Matplotlib for data visualization (box plots, histograms, dendrograms).
+##  Features 
+#### Data Preprocessing: Handling missing values using mean, median, and random imputers.
+#### Outlier Detection: Using Winsorization to treat outliers in key variables such as SAT scores and acceptance rates.
+#### Hierarchical Clustering: Building dendrograms and using Ward's method for clustering.
+#### Correlation Analysis: Visualizing relationships between variables through correlation matrices.
+#### Silhouette Score: Evaluating the quality of the clusters using silhouette scores.
+#### Visualization: Using Seaborn and Matplotlib for data visualization (box plots, histograms, dendrograms).
 
 ### Technologies Used
 ###### Python: Core language for data manipulation and analysis.
