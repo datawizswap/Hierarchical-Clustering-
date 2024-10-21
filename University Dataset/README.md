@@ -13,30 +13,31 @@ The clustering process helps in identifying university groups that share similar
 #### Visualization: Using Seaborn and Matplotlib for data visualization (box plots, histograms, dendrograms).
 
 ### Technologies Used
-###### Python: Core language for data manipulation and analysis.
-###### Pandas: Used for data preprocessing, cleaning, and manipulation.
-###### NumPy: Supports numerical computations.
-###### Seaborn & Matplotlib: For creating insightful visualizations of the data.
-###### SciPy: Used for hierarchical clustering and linkage methods.
-###### Scikit-learn: Machine learning library for clustering, imputation, and evaluation metrics.
-###### D-Tale: Interactive data exploration tool for analyzing the dataset.
-### Feature Engine: Outlier handling using Winsorization.
+#### Python: Core language for data manipulation and analysis.
+#### Pandas: Used for data preprocessing, cleaning, and manipulation.
+#### NumPy: Supports numerical computations.
+#### Seaborn & Matplotlib: For creating insightful visualizations of the data.
+#### SciPy: Used for hierarchical clustering and linkage methods.
+#### Scikit-learn: Machine learning library for clustering, imputation, and evaluation metrics.
+#### D-Tale: Interactive data exploration tool for analyzing the dataset.
+#### Feature Engine: Outlier handling using Winsorization.
 
 ### Project Structure
-###### plaintext
-###### Copy code
-###### University_Clustering_Project/
-###### ├── data/
-###### │   └── University_Clustering.xlsx    # Dataset used for clustering
-###### ├── notebooks/
-###### │   └── university_clustering.ipynb   # Jupyter Notebook for exploratory analysis and clustering
-###### ├── src/
-###### │   └── preprocessing.py              # Python scripts for data preprocessing
-###### │   └── clustering.py                 # Clustering logic and silhouette score evaluation
-###### ├── static/
-###### │   └── plots/                        # Folder containing generated plots (box plots, heatmaps)
-###### ├── README.md                         # Project overview
-###### └── requirements.txt                  # Python dependencies
+
+#### plaintext
+#### Copy code
+#### University_Clustering_Project/
+#### ├── data/
+#### │   └── University_Clustering.xlsx    # Dataset used for clustering
+#### ├── notebooks/
+#### │   └── university_clustering.ipynb   # Jupyter Notebook for exploratory analysis and clustering
+#### ├── src/
+#### │   └── preprocessing.py              # Python scripts for data preprocessing
+#### │   └── clustering.py                 # Clustering logic and silhouette score evaluation
+#### ├── static/
+#### │   └── plots/                        # Folder containing generated plots (box plots, heatmaps)
+#### ├── README.md                         # Project overview
+#### └── requirements.txt                  # Python dependencies
 
 Key Steps
 1. Data Preprocessing
