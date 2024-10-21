@@ -39,44 +39,25 @@ The clustering process helps in identifying university groups that share similar
 #### ├── README.md                         # Project overview
 #### └── requirements.txt                  # Python dependencies
 
-Key Steps
-1. Data Preprocessing
-Handling Missing Values: Using SimpleImputer and RandomSampleImputer to fill missing values in columns like SAT and graduation rates.
-Data Normalization: Normalizing the numerical features before clustering to standardize the range of variables.
-One-Hot Encoding: Encoding categorical variables such as university state to prepare the data for analysis.
-2. Outlier Detection and Treatment
-Winsorization is applied to key variables (SAT, Top10, Accept, SFRatio) to cap outliers and ensure data consistency.
-3. Clustering
-Dendrogram Plot: Hierarchical clustering is visualized using dendrograms, allowing us to determine the optimal number of clusters.
-Agglomerative Clustering: The dataset is clustered into 3 groups based on the dendrogram results.
-4. Cluster Evaluation
-Silhouette Score: A silhouette score is calculated to evaluate the performance and separation of the clusters.
-Installation & Usage
-Requirements
-Python 3.x
-Install the required dependencies using the following command:
-bash
-Copy code
-pip install -r requirements.txt
-Running the Project
-Clone the repository:
-bash
-Copy code
-git clone https://github.com/yourusername/university_clustering.git
-Navigate to the project folder:
-bash
-Copy code
-cd University_Clustering_Project
-Run the Jupyter notebook for data exploration and clustering:
-bash
-Copy code
-jupyter notebook notebooks/university_clustering.ipynb
-Visualizing Results
-Dendrogram and box plots are generated for analyzing the clusters.
-Correlation heatmaps provide insights into relationships between features.
-Results
-After clustering, each university is assigned to one of three clusters.
-The clusters are analyzed based on key features, and their means and variances are compared.
-Visualizations such as dendrograms, box plots, and heatmaps help interpret the clustering results.
-Conclusion
-This project successfully demonstrates how to cluster universities using hierarchical clustering techniques. The results provide insights into how universities can be grouped based on similarities in their characteristics.
+### Key Steps
+#### 1. Data Preprocessing
+#### Handling Missing Values: Using SimpleImputer and RandomSampleImputer to fill missing values in columns like SAT and graduation rates.
+#### Data Normalization: Normalizing the numerical features before clustering to standardize the range of variables.
+#### One-Hot Encoding: Encoding categorical variables such as university state to prepare the data for analysis.
+#### 2. Outlier Detection and Treatment
+#### Winsorization is applied to key variables (SAT, Top10, Accept, SFRatio) to cap outliers and ensure data consistency.
+#### 3. Clustering
+#### Dendrogram Plot: Hierarchical clustering is visualized using dendrograms, allowing us to determine the optimal number of clusters.
+#### Agglomerative Clustering: The dataset is clustered into 3 groups based on the dendrogram results.
+#### 4. Cluster Evaluation
+#### Silhouette Score: A silhouette score is calculated to evaluate the performance and separation of the clusters.
+
+#### Visualizing Results
+#### Dendrogram and box plots are generated for analyzing the clusters.
+#### Correlation heatmaps provide insights into relationships between features.
+### Results
+#### After clustering, each university is assigned to one of three clusters.
+#### The clusters are analyzed based on key features, and their means and variances are compared.
+#### Visualizations such as dendrograms, box plots, and heatmaps help interpret the clustering results.
+### Conclusion
+#### This project successfully demonstrates how to cluster universities using hierarchical clustering techniques. The results provide insights into how universities can be grouped based on similarities in their characteristics.
