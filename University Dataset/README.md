@@ -112,10 +112,10 @@ plt.show()
 This project demonstrated the application of hierarchical clustering on a university dataset. Through data preprocessing, outlier treatment, and visualization techniques, we successfully identified clusters of universities based on their attributes.
 
 #### 10. Libraries Used
-Pandas: Data manipulation and analysis
-Numpy: Numerical computations
-Seaborn/Matplotlib: Data visualization
-Scikit-learn: Machine learning algorithms for imputation and clustering
-Feature Engine: Outlier detection and Winsorization
-SciPy: Hierarchical clustering methods
-D-Tale: Interactive data exploration
+##### Pandas: Data manipulation and analysis
+##### Numpy: Numerical computations
+##### Seaborn/Matplotlib: Data visualization
+##### Scikit-learn: Machine learning algorithms for imputation and clustering
+##### Feature Engine: Outlier detection and Winsorization
+##### SciPy: Hierarchical clustering methods
+##### D-Tale: Interactive data exploration
