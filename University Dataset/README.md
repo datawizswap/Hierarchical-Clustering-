@@ -1,4 +1,5 @@
 # University Clustering Project
+
 #### 1. Introduction
 This project demonstrates how to perform hierarchical clustering on a university dataset. The dataset contains various attributes of universities, and we aim to apply data preprocessing, imputation techniques, outlier treatment, and clustering to extract meaningful insights.
 
