@@ -5,36 +5,39 @@ This project performs Hierarchical Clustering on a university dataset to group u
 The clustering process helps in identifying university groups that share similar characteristics, which can be useful for various educational analyses.
 
 #### Features
-Data Preprocessing: Handling missing values using mean, median, and random imputers.
-Outlier Detection: Using Winsorization to treat outliers in key variables such as SAT scores and acceptance rates.
-Hierarchical Clustering: Building dendrograms and using Ward's method for clustering.
-Correlation Analysis: Visualizing relationships between variables through correlation matrices.
-Silhouette Score: Evaluating the quality of the clusters using silhouette scores.
-Visualization: Using Seaborn and Matplotlib for data visualization (box plots, histograms, dendrograms).
-Technologies Used
-Python: Core language for data manipulation and analysis.
-Pandas: Used for data preprocessing, cleaning, and manipulation.
-NumPy: Supports numerical computations.
-Seaborn & Matplotlib: For creating insightful visualizations of the data.
-SciPy: Used for hierarchical clustering and linkage methods.
-Scikit-learn: Machine learning library for clustering, imputation, and evaluation metrics.
-D-Tale: Interactive data exploration tool for analyzing the dataset.
-Feature Engine: Outlier handling using Winsorization.
-Project Structure
-plaintext
-Copy code
-University_Clustering_Project/
-├── data/
-│   └── University_Clustering.xlsx    # Dataset used for clustering
-├── notebooks/
-│   └── university_clustering.ipynb   # Jupyter Notebook for exploratory analysis and clustering
-├── src/
-│   └── preprocessing.py              # Python scripts for data preprocessing
-│   └── clustering.py                 # Clustering logic and silhouette score evaluation
-├── static/
-│   └── plots/                        # Folder containing generated plots (box plots, heatmaps)
-├── README.md                         # Project overview
-└── requirements.txt                  # Python dependencies
+###### Data Preprocessing: Handling missing values using mean, median, and random imputers.
+###### Outlier Detection: Using Winsorization to treat outliers in key variables such as SAT scores and acceptance rates.
+###### Hierarchical Clustering: Building dendrograms and using Ward's method for clustering.
+###### Correlation Analysis: Visualizing relationships between variables through correlation matrices.
+###### Silhouette Score: Evaluating the quality of the clusters using silhouette scores.
+###### Visualization: Using Seaborn and Matplotlib for data visualization (box plots, histograms, dendrograms).
+
+### Technologies Used
+###### Python: Core language for data manipulation and analysis.
+###### Pandas: Used for data preprocessing, cleaning, and manipulation.
+###### NumPy: Supports numerical computations.
+###### Seaborn & Matplotlib: For creating insightful visualizations of the data.
+###### SciPy: Used for hierarchical clustering and linkage methods.
+###### Scikit-learn: Machine learning library for clustering, imputation, and evaluation metrics.
+###### D-Tale: Interactive data exploration tool for analyzing the dataset.
+### Feature Engine: Outlier handling using Winsorization.
+
+### Project Structure
+###### plaintext
+###### Copy code
+###### University_Clustering_Project/
+###### ├── data/
+###### │   └── University_Clustering.xlsx    # Dataset used for clustering
+###### ├── notebooks/
+###### │   └── university_clustering.ipynb   # Jupyter Notebook for exploratory analysis and clustering
+###### ├── src/
+###### │   └── preprocessing.py              # Python scripts for data preprocessing
+###### │   └── clustering.py                 # Clustering logic and silhouette score evaluation
+###### ├── static/
+###### │   └── plots/                        # Folder containing generated plots (box plots, heatmaps)
+###### ├── README.md                         # Project overview
+###### └── requirements.txt                  # Python dependencies
+
 Key Steps
 1. Data Preprocessing
 Handling Missing Values: Using SimpleImputer and RandomSampleImputer to fill missing values in columns like SAT and graduation rates.
